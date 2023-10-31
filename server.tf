@@ -7,7 +7,7 @@ resource "aws_instance" "myawsserver" {
   key_name = "devops"
 
   tags = {
-    Name = "GDS-1"
+    Name = "IBM"
     env = "production"
     owner = "Tech"
   }
