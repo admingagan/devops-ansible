@@ -1,18 +1,17 @@
 provider "aws" {
-region = "us-east-2"
+region = "us-east-1"
 }
 resource "aws_instance" "myawsserver" {
-  ami = "ami-077e31c4939f6a2f3"
+  ami = "ami-0cf10cdf9fcd62d37"
   instance_type = "t2.micro"
-  key_name = "devops"
+  key_name = "gagan-import"
 
   tags = {
-    Name = "IBM"
-    env = "production"
-    owner = "Tech"
+    Name = "gagan-DevOps-batch-server"
+    env = "Production"
+    owner = "Gagandeep"
   }
   provisioner "local-exec" {
     command = "echo The servers IP address is ${self.public_ip} && echo ${self.public_ip} > /tmp/inv"
   }
 }
-
